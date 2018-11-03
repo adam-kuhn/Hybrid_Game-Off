@@ -16,4 +16,9 @@ public class Player1 : MonoBehaviour {
 	void FixedUpdate () {
         rb.AddForce(0, 20 * Time.deltaTime, 200 * Time.deltaTime);
 	}
+
+    void OnCollisionEnter() {
+        Debug.Log("I've been hit");
+        rb.useGravity = true;
+    }
 }
