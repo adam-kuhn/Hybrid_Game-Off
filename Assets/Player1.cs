@@ -23,22 +23,22 @@ public class Player1 : MonoBehaviour {
 
         if (Input.GetKey("d") || Input.GetKey("right")) 
         {
-            Debug.Log("RIGHT direction");
+            rb.AddForce(1000 * Time.deltaTime, 0, 0);
+        }
+
+        if (Input.GetKey("a") || Input.GetKey("left"))
+        {
+            rb.AddForce(-1000 * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("s") || Input.GetKey("down")) 
         {
-            Debug.Log("DOWN direction");
-        }
-
-        if (Input.GetKey("a") || Input.GetKey("left")) 
-        {
-            Debug.Log("LEFT direction");
+            rb.AddForce(0, 0, -1000 * Time.deltaTime);
         }
 
         if (Input.GetKey("w") || Input.GetKey("up")) 
         {
-            Debug.Log("FORWARD please");
+            rb.AddForce(0, 0, 1000 * Time.deltaTime);
         }
 	}
 
